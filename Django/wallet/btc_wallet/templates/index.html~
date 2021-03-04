@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+<h1>HOME PAGE</h1>
+{% if user.is_authenticated %}
+<p>USERNAME: {{ user.username }}</p>
+<p>EMAIL: {{ user.email }}</p>
+{% endif %}
+{% for key in wallet.keys() %}
+<div>{{ key }}</div><br/>
+{% endfor %}
+{% endblock %}
